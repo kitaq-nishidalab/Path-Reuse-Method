@@ -53,7 +53,7 @@ As a preliminary step, it is necessary to save the path information. The path in
 
 An example of the text file is shown below:
 
-```txt
+```
 ['2.73e-05', '-1.48e-01', '-9.87e-01', '1.25e-05', '1.14', '1.66e-06']
 ['2.67e-05', '-1.55e-01', '-1.03', '1.20e-05', '1.18', '2.04e-06']
 ['2.61e-05', '-1.61e-01', '-1.07', '1.15e-05', '1.23', '2.41e-06']
