@@ -1,7 +1,9 @@
 # Path-Reuse-Method
+
 This document provides an explanation of the code for the new path planning method developed by the Nishida Laboratory.
 
 # 1. Introduction
+
 **Path-Reuse-Method** encodes information from various paths and stores it in the form of "path seeds," which can then be decoded and reused according to the task at hand. Unlike traditional methods that utilize stored primitives, the PR method allows for the expansion and reuse of paths between arbitrary start and goal positions. Additionally, by reusing paths with the desired shape, the number of collision checks in the T-space can be significantly reduced, leading to a substantial decrease in the overall computational cost of path generation.
 <br>
 <br>
@@ -12,7 +14,7 @@ This document provides an explanation of the code for the new path planning meth
 - ROS Noetic
 - CPU: Intel Core i7-12700
 - Memory: 32 GB
-<br>
+  <br>
 
 # 3. Preparations before using our method
 
@@ -53,6 +55,7 @@ Move to the encode&decode folder.
 ```
 cd encode&decode
 ```
+
 <br>
 
 ## 4.2 Save the path information
@@ -67,6 +70,7 @@ An example of the text file is shown below:
 ['2.61e-05', '-1.61e-01', '-1.07', '1.15e-05', '1.23', '2.41e-06']
 ['2.55e-05', '-1.68e-01', '-1.12', '1.11e-05', '1.28', '2.79e-06']
 ```
+
 <br>
 
 ## 4.3 Edit **generate_path.py**
@@ -101,3 +105,9 @@ python3 generate_path.py
 ```
 
 Follow the prompts to generate the new path.
+<br>
+<br>
+
+# 5. Notice
+
+This program only generates path, so it does not execute it. For instructions on executing the path, please refer to the following README.
