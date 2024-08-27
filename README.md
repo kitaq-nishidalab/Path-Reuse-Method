@@ -57,7 +57,7 @@ git clone https://github.com/kitaq-nishidalab/Path-Reuse-Method.git
 Move to the encode&decode folder.
 
 ```
-cd encode&decode
+cd manual/encode&decode
 ```
 
 <br>

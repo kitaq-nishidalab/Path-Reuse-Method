@@ -123,12 +123,16 @@ if mode1 == "1":
 
     mode2 = input(colored_text("Select a mode \n 1: Display generated waypoints \n 2: Save generated waypoints to a file \n >>>>>>>>>>>>> ","33"))
     if mode2 == "1":
-      print("w:\n",convert_data(w))
+      print(s_new)
+      print(convert_data(w))
+      print(g_new)
 
     elif mode2 == "2":
-      file_name2 = input("Enter the name of the file to save generated waypoints >> ")
+      file_name2 = "angle/generatedPath_" + datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".path"
       with open(file_name2, "w") as file:
-        file.write(convert_data(w))
+        file.write(str(s_new) + "\n")
+        file.write(convert_data(w) + "\n")
+        file.write(str(g_new))
       print("Generated path saved to", file_name2)
 
     else:
