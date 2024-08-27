@@ -15,19 +15,19 @@ This document provides an explanation of the code for the new path planning meth
 
 ## 3. Preparations before using our method
 
-### 3.1 Install ROS Noetic
+### <u>3.1 Install ROS Noetic</u>
 
 Please install ROS Noetic on Ubuntu 20.04 LTS.
 
 References: https://wiki.ros.org/noetic/Installation/Ubuntu
 
-### 3.2 Setting Up the xArm6 Environment
+### <u>3.2 Setting Up the xArm6 Environment</u>
 
 This planning method is adaptable to the 6-axis robot arm xArm6 provided by uFactory. Therefore, it is necessary to set up the operating environment for xArm6.
 
 You can smoothly set up the environment by using the following repository we have prepared.
 
-### 3.3 Setting Up the STOMP Environment
+### <u>3.3 Setting Up the STOMP Environment</u>
 
 This method utilizes one of the trajectory optimization algorithms known as Stochastic Trajectory Optimization for Motion Planning (STOMP).
 
@@ -35,7 +35,7 @@ You can smoothly set up the environment by using the following repository we hav
 
 ## 4. Generate new path through encoding and decoding
 
-### 4.1 Download this repository
+### <u>4.1 Download this repository</u>
 
 ```
 git clone https://github.com/kitaq-nishidalab/Path-Reuse-Method.git
@@ -47,7 +47,7 @@ Move to the encode&decode folder.
 cd encode&decode
 ```
 
-### 4.2 Save the path information
+### <u>4.2 Save the path information</u>
 
 As a preliminary step, it is necessary to save the path information. The path information consists of a list of joint angles of the robot arm, which needs to be saved in a text file.
 
@@ -60,7 +60,7 @@ An example of the text file is shown below:
 ['2.55e-05', '-1.68e-01', '-1.12', '1.11e-05', '1.28', '2.79e-06']
 ```
 
-### 4.3 Edit **generate_path.py**
+### <u>4.3 Edit **generate_path.py**</u>
 
 Next, modify the contents of **generate_path.py**.Edit the section enclosed by comments from lines 9 to 18.
 
@@ -81,7 +81,7 @@ For the **waypoint_file**, specify the file path to the text file that was saved
 
 If generating a path with a new start and goal, provide the new start as a list of joint angles in **s_new**, and provide the new goal as a list of joint angles in **g_new**.
 
-### 4.4 Run **generate_path.py**
+### <u>4.4 Run **generate_path.py**</u>
 
 Once all the preparations are complete, run **generate_path.py** to generate the new path.
 
