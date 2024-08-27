@@ -2,20 +2,21 @@ import numpy as np
 import ast
 from functions import (normalize_vector, cross_three_dim, convert_data, colored_text)
 
-np.set_printoptions(threshold=np.inf) # 結果を省略せず全て表示
-np.set_printoptions(linewidth=np.inf) # 行列が途中で自動改行されないようにする
-np.set_printoptions(suppress=True) # 指数表記（e）を用いない
+np.set_printoptions(threshold=np.inf)
+np.set_printoptions(linewidth=np.inf)
+np.set_printoptions(suppress=True)
 
-######以下がユーザ入力欄###########################################################################################
+###### User Input Section Below ##################################################################################
 
-# 入力必須
-waypoint_file = "angle/angle_ex.txt" # ウェイポイントを格納したファイルを指定
+# Required Input
+waypoint_file = "angle/angle_ex.txt" # Specify the file that contains waypoints
 
-# 新たなスタートとゴールでパスを生成する場合に入力
-s_new = [-0.9539568448800573, 0.14286462209588358, -2.4228928517236046, 8.308474924234588e-05, 2.280063497889632, -0.9539539344058481] # 新たなスタートの関節角度
-g_new = [0.8440930198932115, -0.09426596864204129, -2.120484722079457, -5.4759826845440784e-05, 2.2146980161053804, 0.8440667593654201] # 新たなゴールの関節角度
+# Input for generating a path with a new start and goal
+s_new = [-0.9539568448800573, 0.14286462209588358, -2.4228928517236046, 8.308474924234588e-05, 2.280063497889632, -0.9539539344058481] # New start joint angles
+g_new = [0.8440930198932115, -0.09426596864204129, -2.120484722079457, -5.4759826845440784e-05, 2.2146980161053804, 0.8440667593654201] # New goal joint angles
 
 ################################################################################################################
+
 
 
 mode1 = input(colored_text("Select a mode \n 1: Generate a new path with different start and goal \n 2: Save waypoints to a file \n >>>>>>>>>>>>> " , "33"))
@@ -122,10 +123,10 @@ if mode1 == "1":
     w = np.concatenate((w1_array, w2_array), axis=1)
 
     mode2 = input(colored_text("Select a mode \n 1: Display generated waypoints \n 2: Save generated waypoints to a file \n >>>>>>>>>>>>> ","33"))
-    if mode2 == "1":  # 生成したパスを表示
+    if mode2 == "1":
       print("w:\n",convert_data(w))
 
-    elif mode2 == "2": # 生成したパスをファイルに保存
+    elif mode2 == "2":
       file_name2 = input("Enter the name of the file to save generated waypoints >> ")
       with open(file_name2, "w") as file:
         file.write(convert_data(w))
@@ -136,7 +137,7 @@ if mode1 == "1":
 
 elif mode1 == "2":
   file_name1 = input("Enter the name of the file to save the pathseed >> ")
-  with open(file_name1, "w") as file: # パスシードを生成
+  with open(file_name1, "w") as file:
     file.write(convert_data(r1_array) + "\n")
     file.write(convert_data(r2_array) + "\n")
     file.write(convert_data(tau1_array) + "\n")
