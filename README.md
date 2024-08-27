@@ -46,7 +46,6 @@ https://github.com/kitaq-nishidalab/xarm_ros_for_PR-Method
 <br>
 <br>
 
-
 # 4. Generate new path through encoding and decoding
 
 ## 4.1 Download this repository
@@ -65,7 +64,8 @@ cd encode&decode
 
 ## 4.2 Save the path information
 
-As a preliminary step, it is necessary to save the path information. The path information consists of a list of joint angles of the robot arm, which needs to be saved in a text file.
+As a preliminary step, it is necessary to save the path information. The path information consists of a list of joint angles of the robot arm, which needs to be saved in a file.
+We save the file containing the path information with the "**.path**" extension.
 
 An example of the text file is shown below:
 
@@ -80,13 +80,10 @@ An example of the text file is shown below:
 
 ## 4.3 Edit **generate_path.py**
 
-Next, modify the contents of **generate_path.py**.Edit the section enclosed by comments from lines 9 to 18.
+If generating a path with a new start and goal, modify the contents of **generate_path.py**.Provide the new start as a list of joint angles in **s_new**, and provide the new goal as a list of joint angles in **g_new**.
 
 ```python
 ###### User Input Section Below ##################################################################################
-
-# Required Input
-waypoint_file = "angle/angle_ex.txt" # Specify the file that contains waypoints
 
 # Input for generating a path with a new start and goal
 s_new = [-0.9539568448800573, 0.14286462209588358, -2.4228928517236046, 8.308474924234588e-05, 2.280063497889632, -0.9539539344058481] # New start joint angles
@@ -95,21 +92,21 @@ g_new = [0.8440930198932115, -0.09426596864204129, -2.120484722079457, -5.475982
 ################################################################################################################
 ```
 
-For the **waypoint_file**, specify the file path to the text file that was saved in section 4.2.
-
-If generating a path with a new start and goal, provide the new start as a list of joint angles in **s_new**, and provide the new goal as a list of joint angles in **g_new**.
 <br>
 <br>
 
 ## 4.4 Run **generate_path.py**
 
 Once all the preparations are complete, run **generate_path.py** to generate the new path.
+For the argument, enter the relative path to the file where the path information saved in section 4.2 is stored.
 
-```
-python3 generate_path.py
+```bash
+python3 generate_path.py angle/angle_ex.path
 ```
 
 Follow the prompts to generate the new path.
+In the prompt, you can choose either to specify a new start and goal to generate a path or to encode the path and save it as a pathseed.
+We save the file containing the path seeds with the "**.seed**" extension.
 <br>
 <br>
 
