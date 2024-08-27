@@ -32,7 +32,7 @@ This method utilizes one of the trajectory optimization algorithms known as Stoc
 
 You can smoothly set up the environment by using the following repository we have prepared.
 
-https://github.com/kitaq-nishidalab/stomp_ros_for_PR-Method
+https://github.com/kitaq-nishidalab/stomp_ros
 <br>
 <br>
 
@@ -42,7 +42,7 @@ This planning method is adaptable to the 6-axis robot arm xArm6 provided by uFac
 
 You can smoothly set up the environment by using the following repository we have prepared.
 
-https://github.com/kitaq-nishidalab/xarm_ros_for_PR-Method
+https://github.com/kitaq-nishidalab/xarm_ros
 <br>
 <br>
 
