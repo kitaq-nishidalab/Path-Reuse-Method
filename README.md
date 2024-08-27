@@ -26,15 +26,7 @@ References: https://wiki.ros.org/noetic/Installation/Ubuntu
 <br>
 <br>
 
-## 3.2 Setting Up the xArm6 Environment
-
-This planning method is adaptable to the 6-axis robot arm xArm6 provided by uFactory. Therefore, it is necessary to set up the operating environment for xArm6.
-
-You can smoothly set up the environment by using the following repository we have prepared.
-<br>
-<br>
-
-## 3.3 Setting Up the STOMP Environment
+## 3.2 Setting Up the STOMP Environment
 
 This method utilizes one of the trajectory optimization algorithms known as Stochastic Trajectory Optimization for Motion Planning (STOMP).
 
@@ -43,6 +35,17 @@ You can smoothly set up the environment by using the following repository we hav
 https://github.com/kitaq-nishidalab/stomp_ros_for_PR-Method
 <br>
 <br>
+
+## 3.3 Setting Up the xArm6 Environment
+
+This planning method is adaptable to the 6-axis robot arm xArm6 provided by uFactory. Therefore, it is necessary to set up the operating environment for xArm6.
+
+You can smoothly set up the environment by using the following repository we have prepared.
+
+https://github.com/kitaq-nishidalab/xarm_ros_for_PR-Method
+<br>
+<br>
+
 
 # 4. Generate new path through encoding and decoding
 
