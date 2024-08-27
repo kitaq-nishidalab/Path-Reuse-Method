@@ -39,6 +39,8 @@ You can smoothly set up the environment by using the following repository we hav
 This method utilizes one of the trajectory optimization algorithms known as Stochastic Trajectory Optimization for Motion Planning (STOMP).
 
 You can smoothly set up the environment by using the following repository we have prepared.
+
+https://github.com/kitaq-nishidalab/stomp_ros_for_PR-Method
 <br>
 <br>
 
