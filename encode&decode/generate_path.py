@@ -1,5 +1,7 @@
 import numpy as np
 import ast
+import sys
+import datetime
 from functions import (normalize_vector, cross_three_dim, convert_data, colored_text)
 
 np.set_printoptions(threshold=np.inf)
@@ -8,9 +10,6 @@ np.set_printoptions(suppress=True)
 
 ###### User Input Section Below ##################################################################################
 
-# Required Input
-waypoint_file = "angle/angle_ex.txt" # Specify the file that contains waypoints
-
 # Input for generating a path with a new start and goal
 s_new = [-0.9539568448800573, 0.14286462209588358, -2.4228928517236046, 8.308474924234588e-05, 2.280063497889632, -0.9539539344058481] # New start joint angles
 g_new = [0.8440930198932115, -0.09426596864204129, -2.120484722079457, -5.4759826845440784e-05, 2.2146980161053804, 0.8440667593654201] # New goal joint angles
@@ -18,8 +17,8 @@ g_new = [0.8440930198932115, -0.09426596864204129, -2.120484722079457, -5.475982
 ################################################################################################################
 
 
-
-mode1 = input(colored_text("Select a mode \n 1: Generate a new path with different start and goal \n 2: Save waypoints to a file \n >>>>>>>>>>>>> " , "33"))
+waypoint_file = sys.argv[1]
+mode1 = input(colored_text("Select a mode \n 1: Generate a new path with different start and goal \n 2: Save pathseed to a file \n >>>>>>>>>>>>> " , "33"))
 with open(waypoint_file, "r") as f:
     lines = f.readlines()
     s = np.array(ast.literal_eval(lines[0])).reshape(-1,1)
@@ -136,7 +135,7 @@ if mode1 == "1":
       print(colored_text("Invalid mode selected", "31"))
 
 elif mode1 == "2":
-  file_name1 = input("Enter the name of the file to save the pathseed >> ")
+  file_name1 = "pathseed/pathseed_" + datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".seed"
   with open(file_name1, "w") as file:
     file.write(convert_data(r1_array) + "\n")
     file.write(convert_data(r2_array) + "\n")
