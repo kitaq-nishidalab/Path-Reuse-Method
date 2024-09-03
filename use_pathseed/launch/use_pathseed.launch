@@ -1,0 +1,29 @@
+<launch>
+    <arg name="add_gripper" default="true" />
+    <!-- pipeline is stomp or ompl -->
+    <arg name="pipeline" default="stomp" />
+    <!-- Load pathseed file -->
+    <arg name="pathseed_file" default="/home/nishidalab/train_ws/src/pathseeds_encoder/pathseeds/pathseed1.txt" />
+
+    <param name="pathseed_file" value="$(arg pathseed_file)" />
+
+    <include file="$(find xarm_gazebo)/launch/xarm6_beside_table.launch">
+        <arg name="add_gripper" value="$(arg add_gripper)" />
+    </include>
+
+    <include file="$(find xarm6_gripper_moveit_config)/launch/xarm6_gripper_moveit_gazebo.launch" />
+
+    <!-- Planning Functionality -->
+    <include ns="move_group" file="$(find xarm6_gripper_moveit_config)/launch/planning_pipeline.launch.xml">
+        <arg name="pipeline" value="$(arg pipeline)" />
+    </include>
+
+    <!-- control xarm6 -->
+    <node name="xarm6_control" pkg="use_pathseed" type="control_xarm6.py" output="screen" />
+
+    <!-- Add Obstacle in Rviz -->
+    <!-- <node name="obstacle" pkg="pathseeds_encoder" type="add_obj.py" output="screen" /> -->
+
+    <!-- PathSeed publisher -->
+    <node name="pathseed_pub" pkg="use_pathseed" type="pathseed_pub.py"/>
+</launch>
