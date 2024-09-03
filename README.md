@@ -113,3 +113,17 @@ We save the file containing the path seeds with the "**.seed**" extension.
 # 5. Notice
 
 This program only generates path, so it does not execute it. For instructions on executing the path, please refer to the following README.
+
+# 6. Paper
+
+Thank you for citing Path Reuse Method (SICE FES 2024) if you use any of this code.
+```
+@inproceedings{pathreuse2024nishida,
+  title={Path Encoding and Decoding for Articulated Robots via Information Extraction },
+  author={Takeshi Nishida and Tsubasa Watanabe},
+  booktitle={Proc. of SICE Festival 2024 with Annual Conf. },
+  pages={169-173},
+  year={2024},
+  organization={SICE}
+} 
+```
